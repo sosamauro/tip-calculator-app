@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <title>Tip Calculator App</title>
+
+</head>
+
+<body>
+  <div class="container flex">
+    <h1 class="title">SPLI <br> TTER</h1>
+    <div class="calculator__container">
+      <div class="inputs__container">
+        <!-- Bill -->
+        <section class="bill__section">
+          <h2 class="section__title">Bill</h2>
+          <div class="bill__input flex">
+            <input autocomplete="off" type="number" id="bill" placeholder="0">
+          </div>
+        </section>
+        <!-- Select Tip % -->
+        <section class="tip__section">
+          <h2 class="section__title">Select Tip %</h2>
+          <div class="tip__container grid">
+            <button class="tip__content">5%</button>
+            <button class="tip__content">10%</button>
+            <button class="tip__content">15%</button>
+            <button class="tip__content">25%</button>
+            <button class="tip__content">50%</button>
+            <div class="tip__input flex">
+              <input autocomplete="off" type="number" id="tip" placeholder="Custom">
+            </div>
+          </div>
+        </section>
+        <!-- Number of people -->
+        <section class="people__section">
+          <div class="section__title-container">
+            <h2 class="section__title">Number of People</h2>
+            <h2 class="alert"></h2>
+          </div>
+          <div class="people__input flex">
+            <input class="alert__input" autocomplete="off" type="number" id="people" placeholder="0">
+          </div>
+        </section>
+      </div>
+      <div class="results__container flex">
+        <div class="results__content flex">
+          <h3 class="results__title">
+            Tip Amount <br> <span class="results__subtitle">/ person</span>
+          </h3>
+          <h4 class="result" id="tip-amount">$0.00</h4>
+        </div>
+        <div class="results__content flex">
+          <h3 class="results__title">
+            Total <br> <span class="results__subtitle">/ person</span>
+          </h3>
+          <h4 class="result" id="total">$0.00</h4>
+        </div>
+
+        <button class="reset-btn">RESET</button>
+
+      </div>
+    </div>
+  </div>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

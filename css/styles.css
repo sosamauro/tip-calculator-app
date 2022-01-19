@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  /* Font and typography */
+  --ff-primary: "Space Mono", monospace;
+
+  /* Color palette */
+  --clr-primary: hsl(172, 67%, 45%);
+  --clr-cyan-0: hsl(183, 100%, 15%);
+  --clr-cyan-1: hsl(186, 14%, 43%);
+  --clr-cyan-2: hsl(184, 14%, 56%);
+  --clr-cyan-3: hsl(185, 41%, 84%);
+  --clr-cyan-4: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-alert: hsl(12, 62%, 54%);
+
+  /* Font sizes */
+  --fs-input: 1.5rem;
+  --fs-title: 1rem;
+  --fs-subtitle: 0.75rem;
+  --fs-button: 1.4rem;
+  --fs-result: 3rem;
+
+  /* Radius */
+  --radius-element: 0.25rem;
+  --radius-container: 1rem;
+}
+
+/* ========== BASE ========= */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-cyan-3);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+/* ========== REUSABLE CSS CLASSES ========= */
+
+.section__title {
+  font-size: var(--fs-title);
+  color: var(--clr-cyan-1);
+  margin-bottom: 0.5rem;
+}
+
+/* ========== LAYOUT ========= */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== TITLE ========= */
+
+.title {
+  font-size: 1.5rem;
+  color: var(--clr-cyan-0);
+  letter-spacing: 0.5rem;
+  margin: 4rem 0;
+}
+
+/* ========== CALCULATOR CONTAINER ========= */
+
+.calculator__container {
+  display: grid;
+  width: 90vw;
+  max-width: 60rem;
+  background: var(--clr-white);
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.inputs__container {
+  margin: 1.2rem 1rem;
+}
+
+/* ========== BILL SECTION ========== */
+
+.bill__section {
+  margin-bottom: 2rem;
+}
+
+#bill {
+  display: block;
+  width: 100%;
+  font-size: var(--fs-input);
+  font-weight: 700;
+  color: var(--clr-cyan-0);
+  background: var(--clr-cyan-4);
+  border-color: transparent;
+  border-radius: var(--radius-element);
+  font-family: var(--ff-primary);
+  outline-color: var(--clr-primary);
+  background-image: url("/images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  text-align: right;
+  padding: 5px;
+  padding-right: 15px;
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+
+#bill::placeholder {
+  color: var(--clr-cyan-3);
+}
+
+/* removing arrows from input number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ========== TIP SECTION ========== */
+
+.tip__section {
+  margin-bottom: 2rem;
+}
+
+.tip__container {
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tip__content {
+  position: relative;
+  background-color: var(--clr-cyan-0);
+  border-radius: var(--radius-element);
+  padding: 0.5rem;
+  font-family: var(--ff-primary);
+  border-color: transparent;
+  color: var(--clr-cyan-4);
+  font-size: var(--fs-button);
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tip__content:hover {
+  background-color: var(--clr-cyan-3);
+  color: var(--clr-cyan-0);
+}
+
+.tip__clicked {
+  background-color: var(--clr-primary);
+  color: var(--clr-cyan-0);
+}
+
+#tip {
+  display: block;
+  width: 100%;
+  font-size: var(--fs-button);
+  font-weight: 700;
+  color: var(--clr-cyan-0);
+  background: var(--clr-cyan-4);
+  border-color: transparent;
+  border-radius: var(--radius-element);
+  font-family: var(--ff-primary);
+  outline-color: var(--clr-primary);
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  text-align: right;
+  padding: 0 10px;
+  padding-right: 10px;
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+
+#tip::placeholder {
+  color: var(--clr-cyan-2);
+  text-align: center;
+}
+
+/* ======== NUMBER OF PEOPLE SECTION ======== */
+
+.section__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#people {
+  display: block;
+  width: 100%;
+  font-size: var(--fs-input);
+  font-weight: 700;
+  color: var(--clr-cyan-0);
+  background: var(--clr-cyan-4);
+  border-color: transparent;
+  border-radius: var(--radius-element);
+  font-family: var(--ff-primary);
+  outline-color: var(--clr-primary);
+  background-image: url("/images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  text-align: right;
+  padding: 5px;
+  padding-right: 15px;
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+
+#people::placeholder {
+  color: var(--clr-cyan-3);
+}
+
+.alert {
+  font-size: var(--fs-title);
+  color: var(--clr-alert);
+  margin-bottom: 0.5rem;
+}
+
+/* ======== RESULTS SECTION ========= */
+
+.results__container {
+  background: var(--clr-cyan-0);
+  border-radius: var(--radius-container);
+  padding: 2.5rem;
+  flex-direction: column;
+}
+
+.results__content {
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.results__title {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  color: var(--clr-cyan-4);
+  margin-bottom: 0.25rem;
+}
+
+.results__subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: 700;
+  color: var(--clr-cyan-2);
+  margin-bottom: 3rem;
+}
+
+.result {
+  font-size: var(--fs-result);
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+.reset-btn {
+  width: 100%;
+  background-color: hsla(172, 67%, 45%, 0.3);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-family: var(--ff-primary);
+  border-color: transparent;
+  color: var(--clr-cyan-0);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media screen and (max-width: 890px) {
+  .title {
+    margin: 2rem 0;
+  }
+
+  .calculator__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --fs-input: 1.4rem;
+    --fs-title: 0.9rem;
+    --fs-subtitle: 0.65rem;
+    --fs-button: 1.3rem;
+    --fs-result: 1.75rem;
+  }
+
+  .title {
+    margin: 2rem 0;
+  }
+
+  .calculator__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .inputs__container {
+    margin: 0;
+  }
+
+  .tip__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results__container {
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .results__content {
+    margin-bottom: 1rem;
+  }
+
+  .alert {
+    top: 1.8rem;
+  }
+}
